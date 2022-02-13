@@ -1,0 +1,94 @@
+.weather_hero {
+  width: 100%;
+  background-color: var(--primary);
+  position: relative;
+}
+
+@keyframes could_anim {
+  0% {
+    transform: translateX(-50px);
+  }
+
+  50% {
+    transform: translateX(50px);
+  }
+
+  100% {
+    transform: translateX(-50px);
+  }
+}
+.cloud_wrapper {
+  height: 100vh;
+  position: relative;
+  margin: 0 auto;
+  @media (max-width: 1024px) {
+    width: 100%;
+    overflow: hidden;
+  }
+  @media (min-width: 1024px) {
+    width: 60%;
+    overflow: paged-x;
+  }
+  .cloud {
+    background: url("../../assets/img/HeavyCloud.png") no-repeat;
+    opacity: .05;
+    background-size: contain;
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    top: 0;
+    animation-name: could_anim;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+
+    &__lg {
+      width: 200px;
+      height: 200px;
+    }
+  }
+}
+
+.hero_content {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-primary);
+  direction: rtl;
+
+  img {
+    width: 170px;
+    max-height: 200px;
+  }
+
+  &__degree {
+    margin-top: 5rem;
+    font-size: 8.5rem;
+    font-weight: 300;
+
+    &__unit {
+      color: var(--text-secondary);
+    }
+  }
+
+  &__title{
+    color: var(--text-secondary);
+    font-size: 6rem;
+    font-weight: 450;
+  }
+
+  &__timezone {
+    color: var(--text-secondary);
+    margin-top: 9rem;
+  }
+
+  &__location {
+    margin-top: 1.5rem;
+    font-size: 2rem;
+    font-weight: 450;
+    color: var(--text-secondary);
+  }
+}
